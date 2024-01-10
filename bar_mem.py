@@ -1,5 +1,4 @@
-# 由于在当前环境中无法直接显示matplotlib生成的图形，我会先修改您的代码，然后提供一个可以执行的代码块。
-# 您可以复制这个代码块到您的本地环境中执行，以查看结果。
+
 
 # 导入matplotlib.pyplot和numpy库
 import matplotlib.pyplot as plt

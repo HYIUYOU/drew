@@ -49,13 +49,7 @@ plt.legend()
 ax = plt.gca()
 ax.xaxis.set_major_locator(MaxNLocator(integer=True))
 
-# plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0.)
 
-# # 适当调整图形的布局以防止切割
-# plt.tight_layout()
-
-
-# 添加图例，并放置到图形上方中央位置
 plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.1), ncol=4,frameon=False)
 
 # 适当调整图形的布局以防止切割

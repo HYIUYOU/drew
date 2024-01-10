@@ -16,29 +16,20 @@ chatglm1_mem = [1626, 648, 1008, 1624, 682, 1624, 804, 684, 964, 764, 1064, 766,
 chatglm2_mem = [422, 418, 418, 518,426, 434, 424, 412,452, 422, 422, 424,438, 422, 416, 430,422, 416, 430, 422]
 baichuan1_mem = [4000, 3034, 3474, 3120,6362, 7357, 3996, 3434,6964, 4626, 3820, 4860,4260, 4240, 3640, 3580,3966, 3994,3030, 4260]
 baichuan2_mem = [5172, 5372, 4972, 6350,4652, 5372, 5772, 4592,6352, 4812, 5012, 5372,5372, 5172, 4812, 4188,5956, 5172, 4150, 5172]
-# # Normalize the data
-# max_value1 = max(data1)
-# normalized_data1 = [x / max_value1 for x in data1]
+
 v1 = min(chatglm1_mem)
 v2 = min(chatglm2_mem)
 v3 = min(baichuan1_mem)
 v4 = min(baichuan2_mem)
 
-#输出chaglm1_mem的长度
-#print(len(baichuan1_mem))
+
 
 norm_chatglm1 = normalize(chatglm1_mem)
 norm_chatglm2 = normalize(chatglm2_mem)
 norm_baichuan1 = normalize(baichuan1_mem)
 norm_baichuan2 = normalize(baichuan2_mem)
 
-# Plotting the lines with the same color and marker style as the user's image
-#plt.figure(figsize=(8, 6.5))
 
-# plt.plot(time_intervals, chatglm1_mem, color='#3b0f70', marker='>', linestyle='-', label='ChatGLM1', markersize=8)
-# plt.plot(time_intervals, chatglm2_mem, color='#de4968', marker='<', linestyle=':',label='ChatGLM2', markersize=8)
-# plt.plot(time_intervals, baichuan1_mem, color='#8c2981', marker='o', linestyle='--', label='Baichuan1', markersize=8)
-# plt.plot(time_intervals, baichuan2_mem, color='#fe9f6d', marker='x', linestyle='-.', label='Baichuan2', markersize=8,markeredgewidth=4)
 
 
 plt.plot(time_intervals, norm_chatglm1, color='#3b0f70', marker='>', linestyle='-', label='ChatGLM1', markersize=8)
@@ -52,21 +43,7 @@ plt.ylabel('Norm. Memory Changes')
 #plt.title('Different models memory overhead.')
 
 
-# # 计算所有数据集的整体最大值和最小值
-# all_values = norm_chatglm1 + norm_chatglm2 + norm_baichuan1 + norm_baichuan2
-# overall_min = min(all_values)
-# overall_max = max(all_values)
 
-# # 获取当前的坐标轴
-# ax = plt.gca()
-
-# # 获取当前的Y轴刻度
-# current_ticks = ax.get_yticks().tolist()
-
-# # 将整体极值添加到刻度列表中
-# new_ticks = list(set(current_ticks + [overall_min, overall_max]))  # 移除重复的值
-# ax.set_yticks(new_ticks)
-# Adding legend
 plt.legend()
 
 ax = plt.gca()
